@@ -1,0 +1,19 @@
+modules: 
+  - .file_index
+---
+question: |
+  Upload a file
+fields:
+  - no label: user_file
+    datatype: file
+    
+---
+code: 
+  your_summary = create_index(user_file.path().replace('file.pdf',''))
+  
+---
+mandatory: true
+question: |
+  Here you go:
+subquestion: |
+  ${your_summary}
